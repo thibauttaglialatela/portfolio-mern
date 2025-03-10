@@ -1,0 +1,50 @@
+# 🛑 Ignorer les dépendances Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# 🚀 Fichiers de build et de cache
+/build
+/dist
+/out
+/.parcel-cache
+/.turbo
+/.vite
+/.vercel
+/.netlify
+
+# 🔑 Variables d'environnement (ne jamais versionner !)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# 🔍 Logs & fichiers temporaires
+/logs
+*.log
+*.lock
+.npmrc
+.pnpm-debug.log*
+
+# 💾 Caches et fichiers systèmes (Ubuntu & éditeurs)
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-workspace
+
+# 🐳 Docker
+docker-compose.override.yml
+.dockerignore
+/.docker
+
+# ✅ Tests & Coverage
+/coverage
+/junit.xml
+/nyc_output
+
+/data/
+data/
+data/db/
