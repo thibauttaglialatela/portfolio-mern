@@ -3,8 +3,10 @@ import cors from "cors";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import connectDB from "./config/dB.js";
+import projectRoute from "./routes/Project.js"
 
 dotenv.config();
+console.log("🔍 URI MongoDB chargée :", process.env.MONGO_URI);
 
 connectDB();
 
@@ -13,6 +15,7 @@ const app = express();
 app.use(express());
 app.use(cors());
 app.use(morgan("dev"));
+app.use('/api/portfolio/projects', projectRoute);
 
 app.get("/", (req, res) => {
     res.send("API mise à jour avec Nodemon 🚀");
