@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const { Schema } = "mongoose";
+const { Schema } = mongoose;
 
 const projectSchema = new Schema(
   {
@@ -16,4 +16,4 @@ const projectSchema = new Schema(
 
 const Project = mongoose.model("Project", projectSchema);
 
-module.exports = Project;
+export default Project;

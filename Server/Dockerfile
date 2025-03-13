@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Exposer le port 5000
-EXPOSE 5000
+EXPOSE 3000
 
 # Démarrer le serveur en mode développement
 CMD ["npm", "run", "dev"]
