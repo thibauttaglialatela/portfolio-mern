@@ -12,4 +12,4 @@ const hobbySchema = new Schema({
 
 const Hobby = mongoose.model("Hobby", hobbySchema);
 
-module.exports = Hobby;
+export default Hobby;
