@@ -1,6 +1,7 @@
 import express from "express";
 import User from "../models/User.js";
 import bcrypt from "bcrypt";
+import { getUserInfo } from "../controllers/UserController.js";
 
 const userRoute = express.Router();
 
@@ -18,5 +19,7 @@ userRoute.post('/login', async (req, res) => {
         res.status(500).json({ message: "erreur message", error: error.message});
     }
 })
+
+userRoute.get('/user', getUserInfo);
 
 export default userRoute;
