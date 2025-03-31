@@ -6,7 +6,7 @@ const Hero = ({ avatarUrl, avatarAlt, biography }) => {
       <h1 className="text-4xl lg:text-7xl font-bold text-center underline mt-2 lg:mt-6">
         À propos de moi
       </h1>
-      <section className="hero min-h-full mt-4">
+      <section className="hero mt-4">
         <div className="hero-content flex-col lg:flex-row">
           <figure>
             <img
