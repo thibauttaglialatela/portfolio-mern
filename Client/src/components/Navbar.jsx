@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 const Navbar = () => {
   return (
-    <nav className="navbar bg-orange-400 rounded-b-3xl p-4">
+    <nav className="navbar bg-orange-400 rounded-b-3xl p-4 sticky top-0 z-50">
       {/* Logo / Nom */}
       <div className="flex-1">
         <h3 className="text-sm lg:text-xl text-black">
