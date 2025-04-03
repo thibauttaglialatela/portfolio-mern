@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar bg-orange-400 rounded-b-3xl p-4 sticky top-0 z-50">
       {/* Logo / Nom */}
       <div className="flex-1">
-        <h3 className="text-sm lg:text-xl text-black">
+        <h3 className="text-sm lg:text-xl text-black font-bold">
           Thibaut TAGLIALATELA / Développeur PHP Symfony
         </h3>
       </div>
@@ -62,7 +62,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="#"
+                to="/projects"
                 className={(isActive) =>
                   isActive
                     ? "btn btn-neutral btn-active mx-2"
@@ -118,7 +118,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="#"
+              to="/projects"
               className={(isActive) =>
                 isActive
                   ? "btn btn-neutral btn-active mx-2"
