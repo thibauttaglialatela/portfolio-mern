@@ -74,7 +74,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="#"
+                to="/hobbies"
                 className={(isActive) =>
                   isActive
                     ? "btn btn-neutral btn-active mx-2"
@@ -130,7 +130,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="#"
+              to="/hobbies"
               className={(isActive) =>
                 isActive
                   ? "btn btn-neutral btn-active mx-2"
