@@ -7,10 +7,12 @@ export const UserProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const BASE_URL = import.meta.env.VITE_BASE_URL_API;
+
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await fetch("http://localhost:3030/api/portfolio/user");
+                const response = await fetch(`${BASE_URL}api/portfolio/user`);
                 if (!response.ok) {
                     throw new Error("Echec de la récupération des données");
                 }
@@ -23,7 +25,7 @@ export const UserProvider = ({children}) => {
             }
         };
         fetchUserData();
-    }, []);
+    }, [BASE_URL]);
 
     return (
         <UserContext.Provider value={{ userData, loading, error}}>

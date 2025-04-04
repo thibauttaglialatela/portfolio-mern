@@ -39,7 +39,7 @@ const Skills = () => {
         {skillData.map((skill) => (
           <SkillCard
             key={skill._id}
-            logoUrl={`http://localhost:3030/icons/${skill.logo_url}`}
+            logoUrl={`${BASE_URL}icons/${skill.logo_url}`}
             logoAlt={skill.logo_alt}
             category={skill.category}
             level={skill.level}
