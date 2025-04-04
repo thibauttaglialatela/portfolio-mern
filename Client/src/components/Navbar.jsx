@@ -39,10 +39,8 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/"
-                className={(isActive) =>
-                  isActive
-                    ? "btn btn-neutral btn-active mx-2"
-                    : "btn btn-soft mx-2"
+                className={({ isActive }) =>
+                  `btn mx-2 ${isActive ? "btn-active" : "btn-neutral hover:btn-accent"}`
                 }
               >
                 Accueil
@@ -51,10 +49,8 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/skills"
-                className={(isActive) =>
-                  isActive
-                    ? "btn btn-neutral btn-active mx-2"
-                    : "btn btn-soft mx-2"
+                className={({ isActive }) =>
+                  `btn mx-2 ${isActive ? "btn-active" : "btn-neutral hover:btn-accent"}`
                 }
               >
                 Compétences
@@ -63,10 +59,8 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/projects"
-                className={(isActive) =>
-                  isActive
-                    ? "btn btn-neutral btn-active mx-2"
-                    : "btn btn-soft mx-2"
+                className={({ isActive }) =>
+                  `btn mx-2 ${isActive ? "btn-active" : "btn-neutral hover:btn-accent"}`
                 }
               >
                 Projets
@@ -75,10 +69,8 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/hobbies"
-                className={(isActive) =>
-                  isActive
-                    ? "btn btn-neutral btn-active mx-2"
-                    : "btn btn-soft mx-2"
+                className={({ isActive }) =>
+                  `btn mx-2 ${isActive ? "btn-active" : "btn-neutral hover:btn-accent"}`
                 }
               >
                 Passions
@@ -95,10 +87,8 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/"
-              className={(isActive) =>
-                isActive
-                  ? "btn btn-neutral btn-active mx-2"
-                  : "btn btn-soft mx-2"
+              className={({ isActive }) =>
+                `btn mx-2 ${isActive ? "btn-active" : "btn-neutral hover:btn-accent"}`
               }
             >
               Accueil
@@ -107,10 +97,8 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/skills"
-              className={(isActive) =>
-                isActive
-                  ? "btn btn-neutral btn-active mx-2"
-                  : "btn btn-soft mx-2"
+              className={({ isActive }) =>
+                `btn mx-2 ${isActive ? "btn-active" : "btn-neutral hover:btn-accent"}`
               }
             >
               Compétences
@@ -119,10 +107,8 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/projects"
-              className={(isActive) =>
-                isActive
-                  ? "btn btn-neutral btn-active mx-2"
-                  : "btn btn-soft mx-2"
+              className={({ isActive }) =>
+                `btn mx-2 ${isActive ? "btn-active" : "btn-neutral hover:btn-accent"}`
               }
             >
               Projets
@@ -131,10 +117,8 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/hobbies"
-              className={(isActive) =>
-                isActive
-                  ? "btn btn-neutral btn-active mx-2"
-                  : "btn btn-soft mx-2"
+              className={({ isActive }) =>
+                `btn mx-2 ${isActive ? "btn-active" : "btn-neutral hover:btn-accent"}`
               }
             >
               Passions

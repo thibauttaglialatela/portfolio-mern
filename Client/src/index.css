@@ -23,6 +23,11 @@
   background-color: var(--color-gray-400);
 }
 
+@utility btn-active {
+  color: var(--color-gray-800);
+  background-color: var(--color-white)
+}
+
 @utility card {
   background-color: var(--color-white);
   color: var(--color-black);
