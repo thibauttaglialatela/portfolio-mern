@@ -42,7 +42,6 @@ const Skills = () => {
             logoUrl={`${BASE_URL}icons/${skill.logo_url}`}
             logoAlt={skill.logo_alt}
             category={skill.category}
-            level={skill.level}
             name={skill.name}
           ></SkillCard>
         ))}
