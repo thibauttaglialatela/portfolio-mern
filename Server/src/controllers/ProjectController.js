@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import Project from "../models/Project.js";
+const mongoose = require('mongoose');
+const Project = require('../models/Project.js');
 
 export const getAllProjects = async (req, res) => {
     try {
@@ -11,3 +11,5 @@ export const getAllProjects = async (req, res) => {
         res.status(500).json({ message: "Erreur serveur", error: error.message });
     }
 };
+
+module.exports = { getAllProjects };

@@ -1,4 +1,4 @@
-import User from '../models/User.js';
+const User = require('../models/User.js');
 
 export const getUserInfo = async (req, res) => {
     try {
@@ -8,3 +8,5 @@ export const getUserInfo = async (req, res) => {
         res.status(500).json({ message: "erreur serveur", error: error.message});
     }
 }
+
+module.exports = { getUserInfo };
