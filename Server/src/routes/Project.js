@@ -1,10 +1,9 @@
-import express from "express";
-import { getAllProjects } from "../controllers/ProjectController.js";
-
+const express = require("express");
+const getAllProjects = require("../controllers/ProjectController.js")
 const projectRoute = express.Router();
 
 
 //Get all projects
 projectRoute.get('/', getAllProjects);
 
-export default projectRoute;
+module.exports = { projectRoute };

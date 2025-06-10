@@ -1,8 +1,8 @@
-import express from 'express';
-import { getAllHobbies } from '../controllers/HobbyController.js';
+const express = require('express');
+const { getAllHobbies } = require('../controllers/HobbyController.js');
 
 const hobbyRoute = express.Router();
 
 hobbyRoute.get('/hobbies', getAllHobbies);
 
-export default hobbyRoute;
+module.exports = hobbyRoute;

@@ -1,8 +1,8 @@
-import express from 'express';
-import { getAllSkills } from '../controllers/SkillController.js';
+const express = require('express');
+const getAllSkills = require('../controllers/SkillController.js');
 
 const skillRoute = express.Router();
 
 skillRoute.get('/', getAllSkills);
 
-export default skillRoute;
+module.exports = skillRoute;

@@ -1,4 +1,4 @@
-import Skill from '../models/Skill.js';
+const Skill = require('../models/Skill.js');
 
 export const getAllSkills = async (req, res) => {
     try {
@@ -8,3 +8,5 @@ export const getAllSkills = async (req, res) => {
         res.status(500).json({ message: "Erreur serveur", error: error.message});
     }
 };
+
+module.exports = { getAllSkills };

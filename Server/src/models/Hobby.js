@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const hobbySchema = new Schema({
@@ -12,4 +12,4 @@ const hobbySchema = new Schema({
 
 const Hobby = mongoose.model("Hobby", hobbySchema);
 
-export default Hobby;
+module.exports = Hobby;

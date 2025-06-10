@@ -1,7 +1,8 @@
-import express from "express";
-import User from "../models/User.js";
-import bcrypt from "bcrypt";
-import { getUserInfo } from "../controllers/UserController.js";
+import { getUserInfo } from "../controllers/UserController.js"; */
+const express = require("express");
+const User = require("../models/User.js");
+const bcrypt = require("bcrypt");
+const getUserInfo = require("../controllers/UserController.js");
 
 const userRoute = express.Router();
 
@@ -22,4 +23,4 @@ userRoute.post('/login', async (req, res) => {
 
 userRoute.get('/user', getUserInfo);
 
-export default userRoute;
+module.exports = userRoute;
