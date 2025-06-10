@@ -1,4 +1,3 @@
-import { getUserInfo } from "../controllers/UserController.js"; */
 const express = require("express");
 const User = require("../models/User.js");
 const bcrypt = require("bcrypt");
