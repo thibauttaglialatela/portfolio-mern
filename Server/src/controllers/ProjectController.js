@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Project = require('../models/Project.js');
 
-export const getAllProjects = async (req, res) => {
+const getAllProjects = async (req, res) => {
     try {
         console.log("🔎 Base active :", mongoose.connection.name);
         const projects = await Project.find();

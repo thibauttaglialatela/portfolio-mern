@@ -18,14 +18,14 @@ connectDB();
 
 const app = express();
 
-const rootDir = path.resolve(__dirname, ".."); 
+const rootDir = path.resolve(__dirname, "..");
+
+app.use(express.json());
+app.use(cors());
+app.use(morgan("dev"));
 
 app.use("/images", express.static(path.join(rootDir, "assets/images")));
 app.use("/icons", express.static(path.join(rootDir, "assets/icons")))
-
-app.use(express());
-app.use(cors());
-app.use(morgan("dev"));
 
 //routes API
 app.use('/api/portfolio/projects', projectRoute);

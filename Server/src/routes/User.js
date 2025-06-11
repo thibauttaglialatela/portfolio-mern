@@ -1,7 +1,7 @@
 const express = require("express");
 const User = require("../models/User.js");
 const bcrypt = require("bcrypt");
-const getUserInfo = require("../controllers/UserController.js");
+const { getUserInfo } = require("../controllers/UserController.js");
 
 const userRoute = express.Router();
 
