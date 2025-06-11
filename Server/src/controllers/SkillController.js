@@ -1,6 +1,6 @@
 const Skill = require('../models/Skill.js');
 
-export const getAllSkills = async (req, res) => {
+const getAllSkills = async (req, res) => {
     try {
         const skills = await Skill.find();
         res.status(200).json(skills);
