@@ -1,0 +1,16 @@
+# Désactive MultiViews pour éviter les conflits de noms
+Options -MultiViews
+
+# Active la réécriture d'URL
+RewriteEngine On
+
+# Base du site (sous-dossier exact)
+RewriteBase /Client/
+
+# Laisse passer les fichiers et dossiers existants
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redirige tout le reste vers index.html (pour React Router)
+RewriteRule ^ index.html [L]
