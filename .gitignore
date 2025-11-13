@@ -45,6 +45,5 @@ docker-compose.override.yml
 /junit.xml
 /nyc_output
 
-/data/
 data/
 data/db/
