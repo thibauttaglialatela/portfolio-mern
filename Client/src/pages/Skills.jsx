@@ -3,15 +3,13 @@ import SkillCard from "../components/SkillCard";
 
 const Skills = () => {
   const [skillData, setSkillData] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL_API;
 
   useEffect(() => {
     const fetchSkillData = async () => {
       try {
-        const result = await fetch(`${BASE_URL}api/portfolio/skills`);
+        const result = await fetch('jsonData/skills.json');
         if (!result.ok) {
           throw new Error("Echec dans la récupération des données");
         }
@@ -19,14 +17,11 @@ const Skills = () => {
         setSkillData(data);
       } catch (error) {
         setError(error.message);
-      } finally {
-        setLoading(false);
       }
     };
     fetchSkillData();
-  }, [BASE_URL]);
+  }, []);
 
-  if (loading) return <p>Chargement des données...</p>;
   if (error) return <p>Erreur: {error}</p>;
 
 
@@ -38,8 +33,8 @@ const Skills = () => {
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4 place-items-center my-4">
         {skillData.map((skill) => (
           <SkillCard
-            key={skill._id}
-            logoUrl={`${BASE_URL}icons/${skill.logo_url}`}
+            key={skill.id}
+            logoUrl={`./icons/${skill.logo_url}`}
             logoAlt={skill.logo_alt}
             category={skill.category}
             name={skill.name}
