@@ -1,4 +1,4 @@
-import { useUser } from "../context/UserContext.jsx";
+import { useUser } from "../context/useUser.js";
 
 const Footer = () => {
   const { userData } = useUser();
@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="footer footer-center bg-orange-400 rounded-t-3xl text-black items-center p-4">
       <aside className="grid-flow-col items-center">
       <nav className="flex flex-col lg:flex-row gap-4 items-center">
-          {userData && userData.social_links.linkedin && (
+          {userData && userData.linkedin && (
             <a
-              href={userData.social_links.linkedin}
+              href={userData.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Link to my profile Linkedin"
@@ -30,8 +30,8 @@ const Footer = () => {
           Copyright © {new Date().getFullYear()} - Conçu par Thibaut-Louis
           Taglialatela
         </p>
-        {userData && userData.social_links.github && (
-        <a href={userData.social_links.github} target="_blank" rel="noopener noreferrer" aria-label="Link to my profile Github">
+        {userData && userData.github && (
+        <a href={userData.github} target="_blank" rel="noopener noreferrer" aria-label="Link to my profile Github">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

@@ -1,22 +1,14 @@
 import Hero from "../components/Hero";
-import { useUser } from "../context/UserContext.jsx";
+import { useUser } from "../context/useUser.js";
 
 const Home = () => {
   const { userData } = useUser();
-  const BASE_URL = import.meta.env.VITE_BASE_URL_API;
 
-  if (!BASE_URL) {
-    console.warn("VITE_BASE_URL_API n'est pas défini.");
-  }
 
   if (!userData) return <p>Chargement des données utilisateur...</p>;
+  if (userData.error) return <p>Erreur : {userData.error}</p>
 
-  const cleanUrl = (base, path) =>
-    `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
-
-  const avatarUrl = userData.avatar_url
-    ? cleanUrl(BASE_URL, `images/${userData.avatar_url}`)
-    : "https://via.placeholder.com/150";
+  const avatarUrl = userData.avatar_url ? `./images/${userData.avatar_url}` : "https://via.placeholder.com/150";
 
   return (
     <Hero

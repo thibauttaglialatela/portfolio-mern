@@ -1,25 +1,48 @@
-import { createContext, useContext } from "react";
+import { createContext, useEffect, useState } from "react";
 
-const UserContext = createContext();
+export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
+    const [user, setUser] = useState({
+      biography: "",
+      avatar_url: "",
+      avatar_alt: "",
+      social_links: {
+        linkedin: "",
+        github: ""
+      }
+    });
+    const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchUserData() {
+try {
+  const result = await fetch('jsonData/user.json');
+
+  if (!result.ok) {
+throw new Error('Echec lors de la récupération des données');
+  }
+  const data = await result.json();
+  setUser(data);
+} catch (error) {
+  setError(error.message)
+}
+    };
+    fetchUserData()
+  }, []);
 
   const userData = {
-    biography:
-      "Bienvenue sur mon portfolio de développeur web. J'y parle de moi, de mes projets de sites ou autres, de mes études et enfin de mes hobbies et passions. Aprés une formation à la Wild Code School et une autre en alternance à la 3W Academy m'ayant permis d'obtenir le Titre de développeur web Full-Stack, je suis prêt à me lancer dans de nouveaux défis...",
-    avatar_url: "TAGLIALATELA_Thibaut_resized.jpg",
-    avatar_alt: "Thibaut Taglialatela",
-    social_links: {
-      linkedin:
-        "https://www.linkedin.com/in/thibauttaglialatela-apprentice-fullstack-developper/",
-      github: "https://github.com/thibauttaglialatela",
-    },
+    error: error,
+    biography: user.biography,
+    avatar_url: user.avatar_url,
+    avatar_alt: user.avatar_alt,
+    linkedin: user.social_links?.linkedin,
+    github: user.social_links?.github,
   };
-
-
-  return (
+ return (
     <UserContext.Provider value={{ userData }}>{children}</UserContext.Provider>
   );
+
 };
 
-export const useUser = () => useContext(UserContext);
+
