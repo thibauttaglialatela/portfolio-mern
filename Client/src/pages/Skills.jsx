@@ -1,26 +1,9 @@
-import { useEffect, useState } from "react";
 import SkillCard from "../components/SkillCard";
+import useJsonData from "../utils/hooks/useJsonData";
 
 const Skills = () => {
-  const [skillData, setSkillData] = useState([]);
-  const [error, setError] = useState(null);
 
-
-  useEffect(() => {
-    const fetchSkillData = async () => {
-      try {
-        const result = await fetch('jsonData/skills.json');
-        if (!result.ok) {
-          throw new Error("Echec dans la récupération des données");
-        }
-        const data = await result.json();
-        setSkillData(data);
-      } catch (error) {
-        setError(error.message);
-      }
-    };
-    fetchSkillData();
-  }, []);
+  const { data: skillData, error} = useJsonData('skills.json')
 
   if (error) return <p>Erreur: {error}</p>;
 
