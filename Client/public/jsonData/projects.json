@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "name": "ForgeQuest",
+        "content": "Créez et partagez des scénarios de jeu de rôle. Explorez les nouveautés de notre communauté.",
+        "image_url": "Home_page_640.webp",
+        "image_alt": "ForgeQuest homepage",
+        "github_link": "https://github.com/thibauttaglialatela/ForgeQuest-app",
+        "tech_stack": [
+            "Symfony",
+            "MySQL",
+            "Sass"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Wild Series",
+        "content": "Site web consacré aux séries télé. Projet développé en Symfony 6 et\n            Tailwind CSS. Le site permet à un utilisateur identifié et connecté\n            de pouvoir ajouter une série et/ou un acteur dans la base de\n            données. Le site est disponible en anglais et français.",
+        "image_url": "wild_series_home.png",
+        "image_alt": "Wild series homepage",
+        "github_link": "https://github.com/thibauttaglialatela/wild-series-tailwind",
+        "live_demo_link": "https://wild-series-tailwind.portfolio-taglialatela.fr/public/en/",
+        "tech_stack": [
+            "Symfony",
+            "MySQL",
+            "Tailwind"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Orchestre symphonique du sud ouest",
+        "content": "Création du nouveau site de l'OSSO (Orchestre Symphonique du Sud\n            Ouest), orchestre amateur créé en 2007 par Bernard Salles et ayant\n            pour but la diffusion de la musique classique dans la région de Pau\n            et alentours. Le site a été développé à l'aide du framework Symfony\n            et de Bootstrap et comporte une partie administration protégée par\n            login et mot de passe. Le formulaire de contact est protégé par le\n            reCaptcha de Google. Il s'agit de mon projet final de soutenance en\n            vue de l'obtention de mon titre de développeur Web et Web mobile.",
+        "image_url": "OSSO_HomePage.png",
+        "image_alt": "home page OSSO",
+        "github_link": "https://github.com/thibauttaglialatela/osso-website",
+        "tech_stack": [
+            "Symfony",
+            "MySQL",
+            "Bootstrap"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Au courant (WIP)\n",
+        "content": "Site web d'un artisan électricien",
+        "image_url": "about_section_illustration.jpg",
+        "image_alt": "électricien accroupi installant une prise",
+        "github_link": "https://github.com/thibauttaglialatela/au-courant-website",
+        "live_demo_link": "https://au-courant-website.portfolio-taglialatela.fr/",
+        "tech_stack": [
+            "React",
+            "Symfony"
+        ]
+    }
+]
