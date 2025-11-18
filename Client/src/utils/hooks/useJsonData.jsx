@@ -1,24 +1,45 @@
 import { useEffect, useState } from "react";
 
 export default function useJsonData(jsonFile) {
-const [data, setData] = useState([])
-const [error, setError] = useState(null)
+    const [data, setData] = useState([])
+    const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(true)
 
-useEffect(() => {
-    const fetchData = async () => {
-        try {
-            const result = await fetch(`jsonData/${jsonFile}`)
-            if (!result.ok) {
-                throw new Error("Echec dans la récupération des données");
+    useEffect(() => {
+        let isMounted = true;
+
+        const fetchData = async () => {
+            try {
+                setLoading(true)
+
+                const result = await fetch(`jsonData/${jsonFile}`)
+
+                if (!result.ok) {
+                    throw new Error(`Impossible de charger ${jsonFile}`);
+                }
+
+                const json = await result.json();
+
+                if (isMounted) {
+                    setData(json)
+                    setError(null)
+                }
+
+            } catch (err) {
+                if (isMounted) {
+                    setError(err.message)
+                }
+            } finally {
+                if (isMounted) {
+                    setLoading(false)
+                }
             }
-            const resultJson = await result.json();
-            setData(resultJson)
-        } catch (err) {
-            setError(err.message)
+        };
+        fetchData()
+        return () => {
+            isMounted = false
         }
-    };
-    fetchData()
-}, [jsonFile])
+    }, [jsonFile])
 
-return { data, error}
+    return { data, error, loading }
 }
