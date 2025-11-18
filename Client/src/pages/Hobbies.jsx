@@ -1,35 +1,12 @@
-import { useEffect, useState } from "react";
 import { HobbyCard } from "../components/HobbyCard";
+import useJsonData from "../utils/hooks/useJsonData";
 
 export const Hobbies = () => {
-  const [hobbiesData, setHobbiesData] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const {data: hobbies, error, loading} = useJsonData('hobbies.json');
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL_API;
-
-  useEffect(() => {
-    const fetchHobbiesData = async () => {
-      try {
-        const response = await fetch(`${BASE_URL}api/portfolio/hobbies`);
-
-        if (!response.ok) {
-          throw new Error("Erreur lors de la récupération des données");
-        }
-
-        const data = await response.json();
-        setHobbiesData(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchHobbiesData();
-  }, [BASE_URL]);
-
-  if (loading) return <p>Chargement des données...</p>;
-  if (error) return <p>Erreur: {error}</p>;
+  if (loading) return <p>Chargement...</p>
+  if (error) return <p>Erreur: {error}</p>
+  if (!Array.isArray(hobbies)) return <p>Données invalides</p>
 
   return (
     <>
@@ -37,13 +14,17 @@ export const Hobbies = () => {
         Mes centres d'intérét
       </h1>
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-4 place-items-stretch lg:my-6 my-4">
-        {hobbiesData.map((hobby) => (
+        {hobbies.map((hobby) => (
           <HobbyCard
-          key={hobby._id}
-            imageUrl={hobby && hobby.picture_url ? `${BASE_URL}images/${hobby.picture_url}` : 'https://picsum/300/200'}
-            imageAlt={hobby.picture_alt}
-            content={hobby.content}
-            name={hobby.name}
+          key={hobby.id}
+            imageUrl={
+              hobby.picture_url 
+              ? `/images/${hobby.picture_url}` 
+              : 'https://picsum/300/200'
+            }
+            imageAlt={hobby.picture_alt ?? ""}
+            content={hobby.content ?? ""}
+            name={hobby.name ?? ""}
             
           />
         ))}
