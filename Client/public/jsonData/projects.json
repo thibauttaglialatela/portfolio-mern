@@ -51,5 +51,18 @@
             "React",
             "Symfony"
         ]
+    },
+    {
+        "id": 5,
+        "name": "L'eau de ma ville",
+        "content": "Découvrez la qualité de l'eau que vous buvez dans votre ville",
+        "image_url": "Capture d’écran eau de ma ville.png",
+        "image_alt": "Page d'accueil du site L'eau de ma ville",
+        "github_link": "https://github.com/thibauttaglialatela/water-analysis-results",
+        "live_demo_link": "https://www.analyse-eau-potable.portfolio-taglialatela.fr/",
+        "tech_stack": [
+            "Symfony",
+            "Tailwind"
+        ]
     }
 ]
