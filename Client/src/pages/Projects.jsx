@@ -1,9 +1,11 @@
-import useJsonData from '../utils/hooks/useJsonData.jsx'
+import useJsonData from '../utils/hooks/useJsonData'
 import { ProjectCard } from "../components/ProjectCard";
 
 const Projects = () => {
-  const { data: projectData, error} = useJsonData('projects.json')
-  if (error) return <p>Erreur: {error}</p>;
+  const { data: projectData, error, loading } = useJsonData('projects.json');
+
+  if (loading) return <p className="text-center mt-4">Chargement des projets...</p>;
+  if (error) return <p className="text-center text-red-500 mt-4">Erreur : {error}</p>;
 
   return (
     <>
@@ -16,7 +18,11 @@ const Projects = () => {
             key={project.id}
             name={project.name}
             content={project.content}
-            imageUrl={project && project.image_url ? `images/${project.image_url}` : 'https://picsum/300/200'}
+            imageUrl={
+              project?.image_url
+                ? `${import.meta.env.BASE_URL}images/${project.image_url}`
+                : 'https://picsum.photos/300/200'
+            }
             imageAlt={project.image_alt}
             githubLink={project.github_link}
             liveDemoLink={project.live_demo_link}
