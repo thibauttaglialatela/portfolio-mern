@@ -1,0 +1,17 @@
+# Désactive MultiViews pour éviter les conflits
+Options -MultiViews
+
+# Active la réécriture d'URL
+RewriteEngine On
+
+# Base du site à la racine du domaine
+RewriteBase /
+
+# Laisse passer les fichiers et dossiers existants (CSS, JS, images, etc.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redirige toutes les autres requêtes vers index.html
+# (nécessaire pour React Router ou Vite SPA)
+RewriteRule . /index.html [L]

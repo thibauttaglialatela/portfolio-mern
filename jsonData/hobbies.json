@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Le violoncelle",
+        "picture_url": "illustration_hobby_cello.jpg",
+        "picture_alt": "violoncelle",
+        "content": "Je pratique cet instrument depuis l'âge de 8 ans. J'en joue également dans un orchestre symphonique amateur sur Pau, orchestre que j'ai rejoint en 2007. Je participe également à d'autres projets musicaux tels que Les rencontres de violoncelle en Morbihan."
+    },
+    {
+        "id": 2,
+        "name": "La fantasy et la science-fiction.",
+        "picture_url": "illustration_fantasy.jpg",
+        "picture_alt": "Une forêt mystérieuse ",
+        "content": "Grand lecteur de fantasy depuis l'adolescence, j'ai dû lire un nombre incalculable de fois Le seigneur des anneaux. Je dévore également beaucoup de livres de science-fiction comme Dune ou des œuvres de Bradbury."
+    },
+    {
+        "id": 3,
+        "name": "Jeux de rôle, jeux de société et jeux vidéo.",
+        "picture_url": "illustration_games.jpg",
+        "picture_alt": "Un plateau de jeu de société",
+        "content": "Je joue très régulièrement à des jeux vidéo que ce soit sur PC ou console. Dans mes loisirs j'ajouterai les jeux de société et les jeux de rôle que je pratique très régulièrement au sein d'associations ou avec des amis."
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Git",
+        "logo_url": "icons8-git.svg",
+        "logo_alt": "logo Git",
+        "category": "Project",
+        "level": "Intermédiaire"
+    },
+    {
+        "id": 2,
+        "name": "HTML5",
+        "logo_url": "icons8-html-5-144.svg",
+        "logo_alt": "logo HTML5",
+        "category": "Front-end",
+        "level": "Débutant"
+    },
+    {
+        "id": 3,
+        "name": "CSS3",
+        "logo_url": "icons8-css3.svg",
+        "logo_alt": "logo CSS3",
+        "category": "Frontend",
+        "level": "Débutant"
+    },
+    {
+        "id": 4,
+        "name": "PHP",
+        "logo_url": "icons8-php-logo.svg",
+        "logo_alt": "logo PHP",
+        "category": "Backend",
+        "level": "Intermédiaire"
+    },
+    {
+        "id": 5,
+        "name": "MySQL",
+        "logo_url": "icons8-mysql-logo.svg",
+        "logo_alt": "logo MySQL",
+        "category": "Backend",
+        "level": "Débutant"
+    },
+    {
+        "id": 6,
+        "name": "TailwindCSS",
+        "logo_url": "icons8-tailwind-css.svg",
+        "logo_alt": "logo Tailwind",
+        "category": "Frontend",
+        "level": "Débutant"
+    },
+    {
+        "id": 7,
+        "name": "Bootstrap",
+        "logo_url": "icons8-bootstrap.svg",
+        "logo_alt": "logo Bootstrap",
+        "category": "Frontend",
+        "level": "Débutant"
+    },
+    {
+        "id": 8,
+        "name": "Javascript",
+        "logo_url": "icons8-javascript.svg",
+        "logo_alt": "logo Javascript",
+        "category": "Frontend",
+        "level": "Débutant"
+    },
+    {
+        "id": 9,
+        "name": "Symfony",
+        "logo_url": "icons8-symfony.svg",
+        "logo_alt": "logo Symfony",
+        "category": "Backend",
+        "level": "Intermédiaire"
+    }
+]
