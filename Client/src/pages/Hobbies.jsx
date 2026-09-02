@@ -19,7 +19,7 @@ export const Hobbies = () => {
           key={hobby.id}
             imageUrl={
               hobby.picture_url 
-              ? `/images/${hobby.picture_url}` 
+              ? `${import.meta.env.BASE_URL}images/${hobby.picture_url}` 
               : 'https://picsum/300/200'
             }
             imageAlt={hobby.picture_alt ?? ""}
