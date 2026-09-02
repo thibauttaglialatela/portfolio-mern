@@ -2,11 +2,9 @@ import SkillCard from "../components/SkillCard";
 import useJsonData from "../utils/hooks/useJsonData";
 
 const Skills = () => {
+  const { data: skillData, error } = useJsonData('skills.json')
 
-  const { data: skillData, error} = useJsonData('skills.json')
-
-  if (error) return <p>Erreur: {error}</p>;
-
+  if (error) return <p className="text-center text-red-500 mt-4">Erreur : {error}</p>;
 
   return (
     <>
@@ -17,11 +15,12 @@ const Skills = () => {
         {skillData.map((skill) => (
           <SkillCard
             key={skill.id}
-            logoUrl={`./icons/${skill.logo_url}`}
+            // Utilisation de BASE_URL pour pointer vers public/icons/
+            logoUrl={`${import.meta.env.BASE_URL}icons/${skill.logo_url}`}
             logoAlt={skill.logo_alt}
             category={skill.category}
             name={skill.name}
-          ></SkillCard>
+          />
         ))}
       </section>
     </>

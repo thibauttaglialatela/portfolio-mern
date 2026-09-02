@@ -12,7 +12,8 @@ export default function useJsonData(jsonFile) {
             try {
                 setLoading(true)
 
-                const result = await fetch(`jsonData/${jsonFile}`)
+                // Utilisation de import.meta.env.BASE_URL pour gérer le chemin relatif/absolu
+                const result = await fetch(`${import.meta.env.BASE_URL}jsonData/${jsonFile}`)
 
                 if (!result.ok) {
                     throw new Error(`Impossible de charger ${jsonFile}`);
@@ -35,7 +36,9 @@ export default function useJsonData(jsonFile) {
                 }
             }
         };
+
         fetchData()
+
         return () => {
             isMounted = false
         }
